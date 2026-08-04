@@ -1,4 +1,8 @@
 import { TriangulatedChallengeData, SynergyCategory } from "../types";
+import reto1Img from "../assets/images/reto_1_apple_dark_1785839951713.jpg";
+import reto2Img from "../assets/images/reto_2_apple_dark_1785839965483.jpg";
+import reto3Img from "../assets/images/reto_3_apple_dark_1785839977139.jpg";
+import reto4Img from "../assets/images/reto_4_apple_dark_1785839988655.jpg";
 
 export const SYNERGY_CATEGORIES: { id: SynergyCategory; label: string; icon: string; description: string }[] = [
   {
@@ -50,7 +54,7 @@ export const TRIANGULATED_CHALLENGES: TriangulatedChallengeData[] = [
     id: "Reto A",
     challengeNumber: 1,
     region: "Pacífico",
-    image: "/src/assets/images/reto_1_apple_dark_1785839951713.jpg",
+    image: reto1Img,
     title: "Auditorías de Talento y Selección Ciega",
     hmw: "¿Cómo podríamos diseñar un sistema de selección 'a ciegas' y meritocrático, basado en torneos de código en Sandboxes seguros, que elimine los sesgos geográficos y étnicos, y garantice a las empresas el cumplimiento de estándares de ciberseguridad?",
     painCategory: "Crítica M (Cat. 13): Prejuicios empresariales territoriales y recelo por ciberseguridad",
@@ -82,7 +86,7 @@ export const TRIANGULATED_CHALLENGES: TriangulatedChallengeData[] = [
     id: "Reto B",
     challengeNumber: 2,
     region: "Pacífico",
-    image: "/src/assets/images/reto_2_apple_dark_1785839965483.jpg",
+    image: reto2Img,
     title: "Células Satélite de Desarrollo Productivo",
     hmw: "¿Cómo podríamos co-crear e implementar 'Células Satélite de Desarrollo' en Pacífico y Caribe, con infraestructura autónoma, que permitan a jóvenes talentos trabajar en proyectos sin que migren, reduciendo costos e impulsando el desarrollo territorial?",
     painCategory: "Crítica F (Cat. 6): Concentración física de ofertas TI en capitales",
@@ -111,7 +115,7 @@ export const TRIANGULATED_CHALLENGES: TriangulatedChallengeData[] = [
     id: "Reto C",
     challengeNumber: 3,
     region: "Caribe",
-    image: "/src/assets/images/reto_3_apple_dark_1785839977139.jpg",
+    image: reto3Img,
     title: "Fondo de Padrinazgo y Co-Certificación",
     hmw: "¿Cómo podríamos estructurar un programa tipo 'Padrinazgo y Co-Certificación' con profesionales Senior de empresas aliadas que sean mentores de jóvenes y docentes, para aumentar la construcción de redes de contacto e inserción laboral exitosa?",
     painCategory: "Crítica G (Cat. 7): Escasez de capital relacional y redes de mentoría senior",
@@ -140,7 +144,7 @@ export const TRIANGULATED_CHALLENGES: TriangulatedChallengeData[] = [
     id: "Reto D",
     challengeNumber: 4,
     region: "Caribe",
-    image: "/src/assets/images/reto_4_apple_dark_1785839988655.jpg",
+    image: reto4Img,
     title: "Células de Código 100% Asincrónicas",
     hmw: "¿Cómo podríamos diseñar modelos de evaluación y primer empleo 100% asincrónicos, basados en entregables y provistos de hardware, que eliminen las barreras de horario y conciliación con la economía del cuidado, para atraer y retener talento femenino en el sector TI?",
     painCategory: "Crítica Q (Cat. 17): Vulnerabilidad socio-digital y brechas de las mujeres en TI",
