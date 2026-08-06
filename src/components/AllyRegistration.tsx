@@ -150,17 +150,17 @@ export const AllyRegistration: React.FC<AllyRegistrationProps> = ({
           <button
             type="button"
             onClick={onBackToMethodology}
-            className="idtf-btn idtf-btn--secondary py-3 px-5 text-xs w-full sm:w-auto"
+            className="w-full sm:w-auto px-5 py-3 rounded-lg border border-white/20 text-white/70 hover:text-white hover:bg-white/10 text-xs font-mono transition-all"
           >
             ← Volver a Metodología
           </button>
 
           <button
             type="submit"
-            className="idtf-btn idtf-btn--primary w-full sm:w-auto py-4 px-8 text-base font-extrabold flex items-center justify-center gap-2 shadow-2xl"
+            className="w-full sm:w-auto py-3.5 px-8 rounded-xl bg-gradient-to-r from-[var(--idtf-naranja)] to-amber-500 text-slate-950 text-sm font-black uppercase tracking-wide flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
           >
-            Ver Retos Estratégicos y Asignar Monedas IDTF
-            <ArrowRight className="w-5 h-5" />
+            Continuar a Retos Estratégicos e Inversión
+            <ArrowRight className="w-5 h-5 text-slate-950" />
           </button>
         </div>
 

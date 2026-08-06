@@ -270,7 +270,7 @@ export const PactoSignificativo: React.FC<PactoSignificativoProps> = ({
             <button
               type="button"
               onClick={onBackToChallenges}
-              className="idtf-btn idtf-btn--secondary py-4 px-6 text-sm w-full sm:w-auto"
+              className="w-full sm:w-auto px-5 py-3.5 rounded-lg border border-white/20 text-white/70 hover:text-white hover:bg-white/10 text-xs font-mono transition-all"
             >
               ← Volver a Retos
             </button>
@@ -278,13 +278,13 @@ export const PactoSignificativo: React.FC<PactoSignificativoProps> = ({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="idtf-btn idtf-btn--primary w-full sm:w-auto py-4 px-10 text-base font-extrabold flex items-center justify-center gap-3 shadow-2xl disabled:opacity-50"
+              className="w-full sm:w-auto py-4 px-10 rounded-xl bg-gradient-to-r from-[var(--idtf-naranja)] via-amber-500 to-[var(--idtf-verde)] text-slate-950 text-base font-black uppercase tracking-wide flex items-center justify-center gap-3 shadow-2xl hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50"
             >
               {isSubmitting ? (
                 <span>Guardando respuestas en Firebase...</span>
               ) : (
                 <>
-                  <Send className="w-5 h-5" />
+                  <Send className="w-5 h-5 text-slate-950" />
                   Enviar Respuestas y Firmar Pacto Digital
                 </>
               )}

@@ -171,7 +171,7 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Step 3 -> Step 4 transition (From Ally Registration to Strategic Challenges)
+  // Step 3 -> Step 4 transition (From Ally Registration to Strategic Challenges List)
   const handleCompleteAllyRegistration = (e: FormEvent) => {
     e.preventDefault();
     if (!profile.contactName || !profile.companyName) {
@@ -179,16 +179,18 @@ export default function App() {
       return;
     }
 
-    const available = getFilteredChallenges();
-    if (available.length > 0) {
-      setSelectedChallengeId(available[0].id);
-    }
+    // Direct to the list of challenges (selectedChallengeId = null) for the chosen location
+    setSelectedChallengeId(null);
     setCurrentStep(4);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Step 4 -> Step 5 transition (From Challenges to Pacto Significativo)
   const handleProceedToPacto = () => {
+    if (remainingCoins > 0) {
+      alert(`Por favor asigna la totalidad de tus 10 monedas simbólicas en los retos antes de continuar. Aún tienes ${remainingCoins} monedas disponibles.`);
+      return;
+    }
     setCurrentStep(5);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -297,19 +299,19 @@ export default function App() {
                 IDTF · FACILITY
               </div>
               <h1 className="text-sm font-extrabold text-white tracking-tight uppercase">
-                Pacto por la Conectividad Significativa
+                Retos de empleabilidad - Conectividad significativa
               </h1>
             </div>
           </div>
 
-          {/* Persistent Budget HUD in Header */}
-          {currentStep > 1 && (
-            <div className="flex items-center gap-3 bg-[var(--idtf-navy-light)] border border-[var(--idtf-morado)]/30 px-4 py-2 rounded-full shadow-lg">
-              <Coins className="w-4 h-4 text-[var(--idtf-naranja)]" />
-              <div className="text-xs font-mono">
-                <span className="text-[var(--idtf-text-secondary)] hidden sm:inline">Monedas Libres: </span>
-                <span className="font-extrabold text-[var(--idtf-naranja)]">{remainingCoins}</span>
-                <span className="text-[var(--idtf-text-muted)]"> / 10</span>
+          {/* Single Consolidated Sticky Badge in Header (Steps 4 & 5) */}
+          {currentStep >= 4 && (
+            <div className="flex items-center gap-2.5 bg-gradient-to-r from-[var(--idtf-navy-light)] to-[#1a233d] border-2 border-[var(--idtf-naranja)]/60 px-4 py-2 rounded-full shadow-2xl">
+              <Coins className="w-5 h-5 text-[var(--idtf-naranja)] shrink-0" />
+              <div className="text-xs font-mono flex items-center gap-1.5">
+                <span className="text-white/80 hidden sm:inline font-bold">Monedas Libres:</span>
+                <span className="font-black text-sm text-[var(--idtf-naranja)]">{remainingCoins}</span>
+                <span className="text-white/40">/ 10</span>
               </div>
             </div>
           )}
@@ -471,36 +473,34 @@ export default function App() {
 
               {/* Instruction & Budget Status Card */}
               <div className="idtf-card idtf-card--naranja flex flex-col sm:flex-row items-center justify-between gap-6 shadow-xl border-l-4 border-l-[var(--idtf-naranja)] bg-[var(--idtf-navy-light)] p-6 rounded-[var(--idtf-radius-md)]" id="top-budget-instruction-card">
-                <div className="space-y-2 text-center sm:text-left">
+                <div className="space-y-1.5 text-center sm:text-left">
                   <div className="flex items-center gap-2 justify-center sm:justify-start text-xs font-mono uppercase text-[var(--idtf-naranja)] font-extrabold tracking-wider">
                     <Coins className="w-4 h-4 text-[var(--idtf-naranja)]" />
-                    Presupuesto Total de Monedas IDTF
+                    Asignación Estratégica de Inversión
                   </div>
-                  <div className="text-lg font-bold text-white leading-snug">
-                    {remainingCoins === 0 ? (
-                      <span className="text-[var(--idtf-verde)] flex items-center gap-2 justify-center sm:justify-start font-extrabold">
-                        <CheckCircle2 className="w-5 h-5" />
-                        ¡10 Monedas totalmente invertidas!
-                      </span>
-                    ) : (
-                      <span>
-                        Tienes <strong className="text-[var(--idtf-naranja)]">{remainingCoins} monedas libres</strong> por distribuir.
-                      </span>
-                    )}
+                  <div className="text-base sm:text-lg font-bold text-white leading-snug">
+                    Explora los retos territoriales e invierte tus monedas en las prioridades de tu organización
                   </div>
                   <p className="text-xs text-[var(--idtf-text-secondary)] max-w-xl leading-relaxed">
-                    Haz clic en cualquiera de los retos a continuación para explorar su diagnóstico completo, ventajas e invertir tu presupuesto simbólico.
+                    Haz clic en cualquiera de los retos para revisar el diagnóstico detallado, asignar tu presupuesto simbólico y seleccionar los servicios de última milla a aportar.
                   </p>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={handleProceedToPacto}
-                  className="idtf-btn idtf-btn--primary py-3.5 px-6 text-sm shrink-0 flex items-center gap-2 shadow-lg"
-                >
-                  Continuar al Pacto por la Conectividad
-                  <ArrowRight className="w-4 h-4" />
-                </button>
+                {remainingCoins === 0 ? (
+                  <button
+                    type="button"
+                    onClick={handleProceedToPacto}
+                    className="py-3 px-6 rounded-xl bg-gradient-to-r from-[var(--idtf-naranja)] to-amber-500 text-slate-950 font-black text-xs uppercase tracking-wide shrink-0 flex items-center gap-2 shadow-lg hover:scale-105 transition-transform"
+                  >
+                    Continuar al Pacto
+                    <ArrowRight className="w-4 h-4 text-slate-950" />
+                  </button>
+                ) : (
+                  <div className="flex items-center gap-2 bg-[var(--idtf-naranja)]/10 border border-[var(--idtf-naranja)]/40 px-3.5 py-2 rounded-xl text-xs font-mono text-[var(--idtf-naranja)] font-bold shrink-0">
+                    <Coins className="w-4 h-4 text-[var(--idtf-naranja)] shrink-0" />
+                    <span>Monedas restantes: {remainingCoins} / 10</span>
+                  </div>
+                )}
               </div>
 
               {/* Challenge Allocation Cards Grid */}
@@ -585,19 +585,26 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => setCurrentStep(3)}
-                  className="idtf-btn idtf-btn--secondary py-3.5 px-6 text-sm"
+                  className="w-full sm:w-auto px-5 py-3 rounded-lg border border-white/20 text-white/70 hover:text-white hover:bg-white/10 text-xs font-mono transition-all"
                 >
                   ← Volver a Datos del Aliado
                 </button>
 
-                <button
-                  type="button"
-                  onClick={handleProceedToPacto}
-                  className="idtf-btn idtf-btn--primary py-4 px-8 text-base font-extrabold flex items-center justify-center gap-2 shadow-2xl"
-                >
-                  Continuar a la Firma del Pacto por la Conectividad Significativa
-                  <ArrowRight className="w-5 h-5" />
-                </button>
+                {remainingCoins === 0 ? (
+                  <button
+                    type="button"
+                    onClick={handleProceedToPacto}
+                    className="w-full sm:w-auto py-3.5 px-8 rounded-xl bg-gradient-to-r from-[var(--idtf-naranja)] to-amber-500 text-slate-950 text-sm font-black uppercase tracking-wide flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
+                  >
+                    Continuar a la Firma del Pacto por la Conectividad
+                    <ArrowRight className="w-5 h-5 text-slate-950" />
+                  </button>
+                ) : (
+                  <div className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[var(--idtf-navy-light)] border border-[var(--idtf-naranja)]/40 text-xs font-mono text-[var(--idtf-naranja)] flex items-center gap-2 justify-center">
+                    <Coins className="w-4 h-4 shrink-0" />
+                    <span>Invierta las <strong>{remainingCoins}</strong> monedas restantes para continuar a la firma del Pacto</span>
+                  </div>
+                )}
               </div>
 
             </div>

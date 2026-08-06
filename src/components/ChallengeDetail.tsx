@@ -251,26 +251,26 @@ export const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
               </p>
             </div>
 
-            {/* Checkboxes Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {/* Checkboxes Grid - 3 Columns on LG screens for compact UI */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5">
               {LAST_MILE_SERVICES.map((service) => {
                 const isChecked = selectedServices.includes(service);
                 return (
                   <label
                     key={service}
-                    className={`flex items-start gap-3 p-3.5 rounded-[var(--idtf-radius-sm)] border cursor-pointer transition-all ${
+                    className={`flex items-start gap-2.5 p-3 rounded-[var(--idtf-radius-sm)] border cursor-pointer transition-all ${
                       isChecked
-                        ? "bg-[var(--idtf-navy)] border-[var(--idtf-verde)] text-white shadow-md"
-                        : "bg-[var(--idtf-navy)]/60 border-white/10 text-white/80 hover:bg-[var(--idtf-navy)] hover:border-white/20"
+                        ? "bg-[var(--idtf-navy)] border-[var(--idtf-verde)] text-white shadow-md ring-1 ring-[var(--idtf-verde)]/40"
+                        : "bg-[var(--idtf-navy)]/70 border-white/15 text-white/90 hover:bg-[var(--idtf-navy)] hover:border-white/30"
                     }`}
                   >
                     <input
                       type="checkbox"
                       checked={isChecked}
                       onChange={() => handleToggleService(challenge.id, service)}
-                      className="mt-0.5 w-4 h-4 rounded border-white/30 text-[var(--idtf-verde)] focus:ring-[var(--idtf-verde)] accent-[var(--idtf-verde)] shrink-0 cursor-pointer"
+                      className="mt-0.5 w-4 h-4 rounded border-white/40 text-[var(--idtf-verde)] focus:ring-[var(--idtf-verde)] accent-[var(--idtf-verde)] shrink-0 cursor-pointer"
                     />
-                    <span className="text-xs font-medium leading-snug select-none">
+                    <span className="text-xs font-medium leading-snug select-none text-white">
                       {service}
                     </span>
                   </label>
@@ -289,22 +289,55 @@ export const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
                   value={otherServiceText}
                   onChange={(e) => handleOtherServiceTextChange(challenge.id, e.target.value)}
                   placeholder="Escriba aquí el tipo de servicio adicional..."
-                  className="w-full px-4 py-2.5 bg-[var(--idtf-navy-light)] border border-white/20 rounded-[var(--idtf-radius-sm)] text-white placeholder:text-white/30 text-xs focus:border-[var(--idtf-naranja)] outline-none"
+                  className="w-full px-4 py-2.5 bg-[var(--idtf-navy-light)] border border-white/25 rounded-[var(--idtf-radius-sm)] text-white placeholder:text-white/50 text-xs focus:border-[var(--idtf-naranja)] outline-none font-medium"
                 />
               </div>
             )}
 
-            {/* Campo de detalle amplio de oferta y capacidad */}
-            <div className="space-y-2 pt-2">
-              <label className="text-xs font-extrabold text-white block uppercase tracking-wide">
-                Detalle la oferta, recursos y capacidades específicas con las que su organización se suma a este reto:
-              </label>
+            {/* Campo de detalle amplio de oferta y capacidad con Chips/Pills de Autocompletado */}
+            <div className="space-y-3 pt-2">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <label className="text-xs font-extrabold text-white block uppercase tracking-wide">
+                  Detalle la oferta, recursos y capacidades específicas:
+                </label>
+                <span className="text-[11px] font-mono text-[var(--idtf-text-secondary)]">
+                  Haz clic en las sugerencias para autocompletar:
+                </span>
+              </div>
+
+              {/* Quick suggestion pills */}
+              <div className="flex flex-wrap gap-2">
+                {[
+                  "+ 5 Mentores Senior Tech",
+                  "+ 20 Becas de formación",
+                  "+ 10 Vacantes junior a ciegas",
+                  "+ Laboratorio / Espacio físico",
+                  "+ Infraestructura / Conectividad",
+                  "+ Becas de Bilingüismo"
+                ].map((pillText) => (
+                  <button
+                    key={pillText}
+                    type="button"
+                    onClick={() => {
+                      const cleanText = pillText.replace(/^\+\s*/, "");
+                      const newDetail = capacityDetail 
+                        ? `${capacityDetail}, ${cleanText}`
+                        : cleanText;
+                      handleCapacityDetailChange(challenge.id, newDetail);
+                    }}
+                    className="text-[11px] font-mono font-medium px-2.5 py-1 rounded-full bg-white/10 hover:bg-[var(--idtf-verde)]/20 hover:border-[var(--idtf-verde)] text-white/90 hover:text-white border border-white/20 transition-all cursor-pointer"
+                  >
+                    {pillText}
+                  </button>
+                ))}
+              </div>
+
               <textarea
                 rows={3}
                 value={capacityDetail}
                 onChange={(e) => handleCapacityDetailChange(challenge.id, e.target.value)}
                 placeholder="Ej. Disponibilidad de 5 mentores en desarrollo de software, 20 becas de capacitación, laboratorios habilitados en Cali/Barranquilla, vacantes para selección a ciegas..."
-                className="w-full px-4 py-3 bg-[var(--idtf-navy)] border border-white/20 rounded-[var(--idtf-radius-sm)] text-white placeholder:text-white/30 text-xs focus:border-[var(--idtf-verde)] focus:ring-1 focus:ring-[var(--idtf-verde)] outline-none resize-y min-h-[90px]"
+                className="w-full px-4 py-3 bg-[var(--idtf-navy)] border border-white/25 rounded-[var(--idtf-radius-sm)] text-white placeholder:text-white/50 text-xs focus:border-[var(--idtf-verde)] focus:ring-1 focus:ring-[var(--idtf-verde)] outline-none resize-y min-h-[90px] font-medium"
               />
             </div>
 
@@ -317,19 +350,26 @@ export const ChallengeDetail: React.FC<ChallengeDetailProps> = ({
           <button
             type="button"
             onClick={onBackToList}
-            className="idtf-btn idtf-btn--secondary w-full sm:w-auto py-3.5 px-6 text-sm"
+            className="w-full sm:w-auto px-5 py-3 rounded-lg border border-white/20 text-white/70 hover:text-white hover:bg-white/10 text-xs font-mono transition-all"
           >
             ← Volver a la Lista de Retos
           </button>
 
-          <button
-            type="button"
-            onClick={onProceedToPacto}
-            className="idtf-btn idtf-btn--primary w-full sm:w-auto py-4 px-8 text-base font-extrabold flex items-center justify-center gap-2 shadow-2xl"
-          >
-            Continuar al Pacto por la Conectividad
-            <ArrowRight className="w-5 h-5" />
-          </button>
+          {remainingCoins === 0 ? (
+            <button
+              type="button"
+              onClick={onProceedToPacto}
+              className="w-full sm:w-auto py-3.5 px-8 rounded-xl bg-gradient-to-r from-[var(--idtf-naranja)] to-amber-500 text-slate-950 text-sm font-black uppercase tracking-wide flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
+            >
+              Continuar al Pacto por la Conectividad
+              <ArrowRight className="w-5 h-5 text-slate-950" />
+            </button>
+          ) : (
+            <div className="w-full sm:w-auto px-5 py-3 rounded-xl bg-[var(--idtf-navy)] border border-[var(--idtf-naranja)]/40 text-xs font-mono text-[var(--idtf-naranja)] flex items-center gap-2 justify-center">
+              <Coins className="w-4 h-4 shrink-0" />
+              <span>Invierta las <strong>{remainingCoins}</strong> monedas restantes para habilitar el Pacto</span>
+            </div>
+          )}
         </div>
 
       </div>

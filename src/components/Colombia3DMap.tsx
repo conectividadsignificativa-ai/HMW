@@ -27,7 +27,7 @@ const REGIONS: MapRegion[] = [
     territoryValue: "Caribe (Barranquilla, Cartagena, etc.)",
     name: "Caribe",
     badge: "Norte de Colombia",
-    xPercent: 50,
+    xPercent: 52,
     yPercent: 18,
     description: "Enfoque en mentoría Senior, co-certificación y modelos de código 100% asincrónicos para inclusión laboral femenina.",
     cities: "Barranquilla, Cartagena, Santa Marta, Montería, Riohacha",
@@ -39,8 +39,8 @@ const REGIONS: MapRegion[] = [
     territoryValue: "Pacífico (Cali, Pasto, Buenaventura, etc.)",
     name: "Pacífico",
     badge: "Occidente de Colombia",
-    xPercent: 28,
-    yPercent: 52,
+    xPercent: 23,
+    yPercent: 48,
     description: "Enfoque en selección ciega meritocrática en Sandboxes seguros y células satélite de desarrollo productivo regional.",
     cities: "Cali, Pasto, Buenaventura, Quibdó, Tumaco",
     challengesSummary: "Retos A & B (Auditorías Ciegas & Células Satélite)",
@@ -51,8 +51,8 @@ const REGIONS: MapRegion[] = [
     territoryValue: "Ambos / Cobertura Nacional",
     name: "Nivel Nacional",
     badge: "Cobertura Total País",
-    xPercent: 54,
-    yPercent: 60,
+    xPercent: 52,
+    yPercent: 56,
     description: "Estrategia integral con despliegue de oportunidades simultáneas en Pacífico y Caribe sin barreras territoriales.",
     cities: "Bogotá, Medellín, Bucaramanga y Cobertura Nacional",
     challengesSummary: "Todos los Retos (1, 2, 3 y 4)",
@@ -142,58 +142,53 @@ export const Colombia3DMap: React.FC<Colombia3DMapProps> = ({
             
             {/* Lower Shadow Layer for 3D Extrusion */}
             <svg 
-              viewBox="0 0 400 500" 
-              className="absolute w-[280px] sm:w-[320px] h-auto text-black/50 filter blur-[2px] transform translate-y-4 translate-x-1 pointer-events-none"
+              viewBox="0 0 400 530" 
+              className="absolute w-[280px] sm:w-[330px] h-auto text-black/60 filter blur-[3px] transform translate-y-5 translate-x-2 pointer-events-none"
               aria-hidden="true"
             >
               <path 
-                d="M 190,20 C 210,35 240,40 250,60 C 255,80 230,100 220,110 C 210,120 225,135 235,150 C 250,170 270,180 280,210 C 290,240 270,270 250,290 C 230,310 220,330 200,360 C 180,390 170,430 150,470 C 140,460 130,420 120,390 C 110,360 90,320 85,290 C 80,260 70,230 75,200 C 80,170 110,150 120,130 C 130,110 150,90 160,70 Z" 
+                d="M 222,18 C 235,20 248,28 258,40 C 265,48 260,58 245,64 C 230,70 212,65 195,65 C 178,65 162,75 148,88 C 136,98 126,112 114,128 C 105,140 98,152 92,160 C 86,168 88,178 82,188 C 76,198 68,212 68,228 C 68,244 78,258 82,272 C 86,286 72,305 62,325 C 54,342 48,355 60,365 C 72,375 92,378 110,388 C 128,398 148,410 168,425 C 188,440 215,460 238,485 C 248,495 254,510 256,518 C 258,512 263,492 260,475 C 258,458 248,442 250,428 C 252,412 272,398 292,382 C 312,366 328,346 338,325 C 346,305 344,280 358,255 C 368,235 375,215 365,198 C 354,185 332,182 315,178 C 298,172 278,162 270,145 C 262,128 274,115 265,106 C 256,98 244,106 238,92 C 232,78 234,55 228,38 C 224,28 220,20 222,18 Z" 
                 fill="currentColor"
               />
             </svg>
 
             {/* Glowing Main Map SVG Layer */}
             <svg 
-              viewBox="0 0 400 500" 
-              className="relative w-[280px] sm:w-[320px] h-auto filter drop-shadow-[0_10px_20px_rgba(168,85,247,0.3)] pointer-events-none"
+              viewBox="0 0 400 530" 
+              className="relative w-[280px] sm:w-[330px] h-auto filter drop-shadow-[0_0_15px_rgba(56,189,248,0.4)] pointer-events-none"
             >
               <defs>
                 <linearGradient id="colombiaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#1e293b" stopOpacity="0.95" />
-                  <stop offset="50%" stopColor="#0f172a" stopOpacity="0.9" />
-                  <stop offset="100%" stopColor="#1e1b4b" stopOpacity="0.95" />
+                  <stop offset="0%" stopColor="#0f2b48" stopOpacity="0.85" />
+                  <stop offset="50%" stopColor="#0b1e36" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#081527" stopOpacity="0.9" />
                 </linearGradient>
 
-                <linearGradient id="glowBorder" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#38bdf8" />
-                  <stop offset="50%" stopColor="#f97316" />
-                  <stop offset="100%" stopColor="#a855f7" />
-                </linearGradient>
-
-                <pattern id="gridPattern" width="20" height="20" patternUnits="userSpaceOnUse">
-                  <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1" />
+                <pattern id="gridPattern" width="16" height="16" patternUnits="userSpaceOnUse">
+                  <path d="M 16 0 L 0 0 0 16" fill="none" stroke="rgba(255, 255, 255, 0.05)" strokeWidth="0.8" />
                 </pattern>
               </defs>
 
-              {/* Main Colombia Contour Path */}
+              {/* Main Colombia Contour Path (Filled with deep blue) */}
               <path 
-                d="M 190,20 C 210,35 240,40 250,60 C 255,80 230,100 220,110 C 210,120 225,135 235,150 C 250,170 270,180 280,210 C 290,240 270,270 250,290 C 230,310 220,330 200,360 C 180,390 170,430 150,470 C 140,460 130,420 120,390 C 110,360 90,320 85,290 C 80,260 70,230 75,200 C 80,170 110,150 120,130 C 130,110 150,90 160,70 Z" 
+                d="M 222,18 C 235,20 248,28 258,40 C 265,48 260,58 245,64 C 230,70 212,65 195,65 C 178,65 162,75 148,88 C 136,98 126,112 114,128 C 105,140 98,152 92,160 C 86,168 88,178 82,188 C 76,198 68,212 68,228 C 68,244 78,258 82,272 C 86,286 72,305 62,325 C 54,342 48,355 60,365 C 72,375 92,378 110,388 C 128,398 148,410 168,425 C 188,440 215,460 238,485 C 248,495 254,510 256,518 C 258,512 263,492 260,475 C 258,458 248,442 250,428 C 252,412 272,398 292,382 C 312,366 328,346 338,325 C 346,305 344,280 358,255 C 368,235 375,215 365,198 C 354,185 332,182 315,178 C 298,172 278,162 270,145 C 262,128 274,115 265,106 C 256,98 244,106 238,92 C 232,78 234,55 228,38 C 224,28 220,20 222,18 Z" 
                 fill="url(#colombiaGradient)"
-                stroke="url(#glowBorder)"
-                strokeWidth="2.5"
+                stroke="#ffffff"
+                strokeWidth="2.2"
+                strokeLinecap="round"
                 strokeLinejoin="round"
               />
 
               {/* Tech Mesh Overlay inside Map */}
               <path 
-                d="M 190,20 C 210,35 240,40 250,60 C 255,80 230,100 220,110 C 210,120 225,135 235,150 C 250,170 270,180 280,210 C 290,240 270,270 250,290 C 230,310 220,330 200,360 C 180,390 170,430 150,470 C 140,460 130,420 120,390 C 110,360 90,320 85,290 C 80,260 70,230 75,200 C 80,170 110,150 120,130 C 130,110 150,90 160,70 Z" 
+                d="M 222,18 C 235,20 248,28 258,40 C 265,48 260,58 245,64 C 230,70 212,65 195,65 C 178,65 162,75 148,88 C 136,98 126,112 114,128 C 105,140 98,152 92,160 C 86,168 88,178 82,188 C 76,198 68,212 68,228 C 68,244 78,258 82,272 C 86,286 72,305 62,325 C 54,342 48,355 60,365 C 72,375 92,378 110,388 C 128,398 148,410 168,425 C 188,440 215,460 238,485 C 248,495 254,510 256,518 C 258,512 263,492 260,475 C 258,458 248,442 250,428 C 252,412 272,398 292,382 C 312,366 328,346 338,325 C 346,305 344,280 358,255 C 368,235 375,215 365,198 C 354,185 332,182 315,178 C 298,172 278,162 270,145 C 262,128 274,115 265,106 C 256,98 244,106 238,92 C 232,78 234,55 228,38 C 224,28 220,20 222,18 Z" 
                 fill="url(#gridPattern)"
               />
 
-              {/* Decorative Regional Internal Rays & Glowing Networks */}
-              <line x1="200" y1="60" x2="110" y2="260" stroke="rgba(249, 115, 22, 0.25)" strokeDasharray="3,3" strokeWidth="1.5" />
-              <line x1="200" y1="60" x2="215" y2="300" stroke="rgba(168, 85, 247, 0.25)" strokeDasharray="3,3" strokeWidth="1.5" />
-              <line x1="110" y1="260" x2="215" y2="300" stroke="rgba(16, 185, 129, 0.25)" strokeDasharray="3,3" strokeWidth="1.5" />
+              {/* Decorative Regional Connection Rays */}
+              <line x1="200" y1="75" x2="82" y2="250" stroke="rgba(249, 115, 22, 0.3)" strokeDasharray="3,3" strokeWidth="1.2" />
+              <line x1="200" y1="75" x2="215" y2="290" stroke="rgba(168, 85, 247, 0.3)" strokeDasharray="3,3" strokeWidth="1.2" />
+              <line x1="82" y1="250" x2="215" y2="290" stroke="rgba(16, 185, 129, 0.3)" strokeDasharray="3,3" strokeWidth="1.2" />
             </svg>
 
             {/* Interactive Region Pin Nodes (Absolute Positioning over Map Overlay) */}

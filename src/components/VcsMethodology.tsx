@@ -168,15 +168,66 @@ export const VcsMethodology: React.FC<VcsMethodologyProps> = ({
           <div className="idtf-section-header__number">02</div>
           <div>
             <h3 className="idtf-section-header__title">
-              EL DIAGNÓSTICO: <span className="accent">¿QUÉ FRENA EL TALENTO?</span>
+              EL DIAGNÓSTICO: <span className="accent">CIFRAS CLAVE Y FRENO AL TALENTO</span>
             </h3>
             <p className="text-xs sm:text-sm text-[var(--idtf-text-secondary)] mt-1">
               {showCaribe && showPacifico 
-                ? "Analizamos el ecosistema laboral digital en el Caribe y el Pacífico colombiano a través de espacios participativos."
+                ? "Indicadores estratégicos del ecosistema laboral digital en el Caribe y el Pacífico colombiano."
                 : showCaribe 
-                  ? "Analizamos el ecosistema laboral digital en la Región Caribe a través de espacios participativos."
-                  : "Analizamos el ecosistema laboral digital en la Región Pacífico a través de espacios participativos."
+                  ? "Indicadores estratégicos del ecosistema laboral digital en la Región Caribe."
+                  : "Indicadores estratégicos del ecosistema laboral digital en la Región Pacífico."
               }
+            </p>
+          </div>
+        </div>
+
+        {/* Executive KPI Summary Cards (3 Key Metrics with Progress Bars) */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="bg-[var(--idtf-navy-light)] border border-white/15 p-4 rounded-[var(--idtf-radius-md)] space-y-3 shadow-md">
+            <div className="space-y-1">
+              <div className="text-xs font-extrabold text-white uppercase tracking-wider font-mono flex items-center justify-between">
+                <span>Desajuste de Habilidades</span>
+                <span className="text-[var(--idtf-naranja)] text-[11px]">Alto</span>
+              </div>
+              {/* Progress bar */}
+              <div className="w-full bg-[var(--idtf-navy)] h-2 rounded-full overflow-hidden border border-white/10">
+                <div className="bg-gradient-to-r from-[var(--idtf-naranja)] to-amber-400 h-full rounded-full w-[75%]" />
+              </div>
+            </div>
+            <p className="text-[11px] text-[var(--idtf-text-secondary)] leading-snug">
+              Brecha técnica entre la oferta formativa tradicional y las demandas reales del sector TI.
+            </p>
+          </div>
+
+          <div className="bg-[var(--idtf-navy-light)] border border-white/15 p-4 rounded-[var(--idtf-radius-md)] space-y-3 shadow-md">
+            <div className="space-y-1">
+              <div className="text-xs font-extrabold text-white uppercase tracking-wider font-mono flex items-center justify-between">
+                <span>Juventud en Inactividad Laboral</span>
+                <span className="text-[var(--idtf-verde)] text-[11px]">Crítico</span>
+              </div>
+              {/* Progress bar */}
+              <div className="w-full bg-[var(--idtf-navy)] h-2 rounded-full overflow-hidden border border-white/10">
+                <div className="bg-gradient-to-r from-[var(--idtf-verde)] to-emerald-400 h-full rounded-full w-[65%]" />
+              </div>
+            </div>
+            <p className="text-[11px] text-[var(--idtf-text-secondary)] leading-snug">
+              Jóvenes con talento sin empleo formal ni formación activa en los nodos territoriales.
+            </p>
+          </div>
+
+          <div className="bg-[var(--idtf-navy-light)] border border-white/15 p-4 rounded-[var(--idtf-radius-md)] space-y-3 shadow-md">
+            <div className="space-y-1">
+              <div className="text-xs font-extrabold text-white uppercase tracking-wider font-mono flex items-center justify-between">
+                <span>Fricción por Sesgos & Redes</span>
+                <span className="text-sky-400 text-[11px]">Severo</span>
+              </div>
+              {/* Progress bar */}
+              <div className="w-full bg-[var(--idtf-navy)] h-2 rounded-full overflow-hidden border border-white/10">
+                <div className="bg-gradient-to-r from-sky-400 to-indigo-400 h-full rounded-full w-[85%]" />
+              </div>
+            </div>
+            <p className="text-[11px] text-[var(--idtf-text-secondary)] leading-snug">
+              Contratación frenada por falta de certificados específicos y desconexión empresarial.
             </p>
           </div>
         </div>
@@ -203,7 +254,7 @@ export const VcsMethodology: React.FC<VcsMethodologyProps> = ({
                     Falta de redes de oportunidad y fricción de red
                   </div>
                   <p className="text-xs text-[var(--idtf-text-secondary)] pl-5">
-                    Desconexión entre lo que requiere el mercado laboral y las juventudes del Caribe, agravado por sesgos de contratación (geográficos, étnicos y de títulos) e inexistencia de pasaportes de habilidades meritocráticos.
+                    Desconexión entre lo que requiere el mercado laboral y las juventudes del Caribe, agravado por sesgos de contratación (geográficos, étnicos y de títulos) e inexistencia de certificados específicos de habilidades.
                   </p>
                 </div>
 
@@ -250,7 +301,7 @@ export const VcsMethodology: React.FC<VcsMethodologyProps> = ({
                     Síndrome del impostor, desmotivación y brecha de apropiación comunitaria
                   </div>
                   <p className="text-xs text-[var(--idtf-text-secondary)] pl-5">
-                    Desmotivación de la población NINI en Cali y el resto de la región por falta de acompañamiento psicosocial, mentorías cercanas y vinculación con referentes locales inspiradores.
+                    Desmotivación de las juventudes en inactividad laboral en Cali y el resto de la región por falta de acompañamiento psicosocial, mentorías cercanas y vinculación con referentes locales inspiradores.
                   </p>
                 </div>
               </div>
@@ -265,7 +316,7 @@ export const VcsMethodology: React.FC<VcsMethodologyProps> = ({
         <button
           type="button"
           onClick={onBackToMap}
-          className="idtf-btn idtf-btn--secondary py-3.5 px-6 text-sm flex items-center gap-2"
+          className="w-full sm:w-auto px-5 py-3 rounded-lg border border-white/20 text-white/70 hover:text-white hover:bg-white/10 text-xs font-mono transition-all flex items-center justify-center gap-2"
         >
           ← Volver al Mapa 3D
         </button>
@@ -273,10 +324,10 @@ export const VcsMethodology: React.FC<VcsMethodologyProps> = ({
         <button
           type="button"
           onClick={onProceed}
-          className="idtf-btn idtf-btn--primary w-full sm:w-auto py-4 px-8 text-base font-extrabold flex items-center justify-center gap-2 shadow-2xl"
+          className="w-full sm:w-auto py-3.5 px-8 rounded-xl bg-gradient-to-r from-[var(--idtf-naranja)] to-amber-500 text-slate-950 text-sm font-black uppercase tracking-wide flex items-center justify-center gap-2 shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
         >
           Continuar a Registro de Aliado y Opciones de Colaboración
-          <ArrowRight className="w-5 h-5" />
+          <ArrowRight className="w-5 h-5 text-slate-950" />
         </button>
       </div>
 
