@@ -55,31 +55,29 @@ export const TRIANGULATED_CHALLENGES: TriangulatedChallengeData[] = [
     challengeNumber: 1,
     region: "Pacífico",
     image: reto1Img,
-    title: "Auditorías de Talento y Selección Ciega",
-    hmw: "¿Cómo podríamos diseñar un sistema de selección 'a ciegas' y meritocrático, basado en torneos de código en Sandboxes seguros, que elimine los sesgos geográficos y étnicos, y garantice a las empresas el cumplimiento de estándares de ciberseguridad?",
-    painCategory: "Crítica M (Cat. 13): Prejuicios empresariales territoriales y recelo por ciberseguridad",
-    painDescription: "Riesgo corporativo de incumplir auditorías internacionales de seguridad (Compliance) al contratar remotamente, sumado a sesgos geográficos y étnicos que bloquean el talento regional.",
+    title: "Ruta de Empleabilidad Digital y Conectividad Productiva",
+    hmw: "Co-crear un modelo de ruta de empleabilidad digital que, aprovechando la densidad institucional y los servicios de última milla existentes , articule la formación técnica actualizada, la certificación práctica en espacios simulados controlados (Sandboxes), el reconocimiento de trayectorias alternativas y las redes de mentoría para conectar a jóvenes —especialmente población NINI— con el mercado laboral; y que, al mismo tiempo, contenga módulos adaptables (alfabetización digital básica, conectividad productiva y agrotech) para ser implementados en nodo como Pasto, con sus actores locales.",
+    painCategory: "Brecha de articulación en formación técnica, Sandboxes y conectividad productiva en Pacífico",
+    painDescription: "Inexistencia de rutas integradas que articulen la formación técnica con Sandboxes prácticos y redes de mentoría con pertinencia territorial para jóvenes NINI en nodos como Pasto y Cali.",
     leverCategories: [
-      "C. Inexistencia de Sandboxes regulados",
-      "E. Sesgo de credenciales tradicionales",
-      "R. Gobernanza e institucionalidad"
+      "A. Formación técnica actualizada y Sandboxes prácticos",
+      "B. Reconocimiento de trayectorias alternativas y redes de mentoría",
+      "C. Módulos adaptables (alfabetización digital, agrotech y conectividad productiva)"
     ],
     potentialActors: [
-      "Tecnalia",
-      "Empresas de Ciberseguridad Aliadas",
-      "MinTIC",
-      "Torre / SUMMA Capital",
-      "Compromiso Valle (Cámara de Comercio Cali)",
+      "SENA Pacífico",
+      "Cámara de Comercio de Pasto",
       "Gobernación de Nariño (Sec. TIC)",
-      "Colombina S.A."
+      "Compromiso Valle",
+      "Empresas TIC locales y gremios regionales"
     ],
     advantages: [
-      "Contratación 100% meritocrática y libre de sesgos inconscientes (origen, género, universidad).",
-      "Garantiza a clientes internacionales (ej. Europa) que el código producido es seguro, auditable y compliant."
+      "Conecta la formación técnica actualizada con certificación práctica en Sandboxes simulados.",
+      "Módulos adaptables para nodos rurales y urbanos (Pasto, Cali, litoral) en agrotech y conectividad productiva."
     ],
     disadvantages: [
-      "Resistencia cultural de departamentos tradicionales de Gestión Humana.",
-      "Costo de infraestructura inicial para mantener simuladores VPN encriptados de alto nivel."
+      "Requiere alta articulación multisectorial entre actores educativos, gubernamentales y privados.",
+      "Infraestructura tecnológica continua para mantener los espacios simulados (Sandboxes)."
     ]
   },
   {
@@ -87,87 +85,86 @@ export const TRIANGULATED_CHALLENGES: TriangulatedChallengeData[] = [
     challengeNumber: 2,
     region: "Pacífico",
     image: reto2Img,
-    title: "Células Satélite de Desarrollo Productivo",
-    hmw: "¿Cómo podríamos co-crear e implementar 'Células Satélite de Desarrollo' en Pacífico y Caribe, con infraestructura autónoma, que permitan a jóvenes talentos trabajar en proyectos sin que migren, reduciendo costos e impulsando el desarrollo territorial?",
-    painCategory: "Crítica F (Cat. 6): Concentración física de ofertas TI en capitales",
-    painDescription: "Altos sobrecostos operativos y guerra caníbal por talento en Bogotá/Medellín (alta rotación de desarrolladores), mientras el talento periférico del Caribe y Pacífico queda aislado.",
+    title: "Acompañamiento Psicosocial, Mentoría y Referentes Locales",
+    hmw: "Diseñar un modelo de acompañamiento psicosocial, mentoría y referentes locales que, en Cali, aborde el síndrome del impostor y la desmotivación de la población NINI y que, en el resto de la región se vincule con referentes regionales y con la apropiación comunitaria de la conectividad.",
+    painCategory: "Síndrome del impostor, desmotivación y brecha de apropiación comunitaria",
+    painDescription: "Desmotivación y autoexclusión en jóvenes NINI de Cali y municipios del Pacífico por falta de acompañamiento psicosocial, redes de mentoría cercana y referentes locales inspiradores.",
     leverCategories: [
-      "O. Inestabilidad de infraestructura eléctrica y hardware",
-      "P. Sostenibilidad de redes comunitarias",
-      "A. Mallas curriculares ágiles"
+      "A. Mentoría psicosocial y superación del síndrome del impostor",
+      "B. Referentes regionales inspiradores",
+      "C. Apropiación comunitaria de la conectividad"
     ],
     potentialActors: [
       "Parquesoft Pacífico",
-      "Cámaras de Comercio locales (Barranquilla, Cartagena, Cali, Pasto)",
-      "Empresas de Software Nacional (Fedesoft)",
-      "EnlazaNet"
+      "Alcaldía de Cali / Secretarías de Juventud",
+      "Fundaciones Sociales del Valle y Nariño",
+      "Redes de Mentores Locales"
     ],
     advantages: [
-      "Reduce drásticamente los costos operativos corporativos de las capitales (Nearshoring interno).",
-      "Frena la fuga de cerebros y retiene el valor económico y tributario en el territorio de origen."
+      "Atiende las barreras psicosociales y emocionales de autoexclusión en jóvenes NINI.",
+      "Fomenta la apropiación comunitaria de la conectividad y el desarrollo de referentes locales inspiradores."
     ],
     disadvantages: [
-      "Exige que la empresa contratante tenga una cultura organizacional de trabajo remoto asincrónico muy madura.",
-      "Dependencia crítica del desempeño del operador local de internet satelital/fibra."
+      "Exige profesionales capacitados en salud mental y facilitación psicosocial comunitaria.",
+      "Demanda seguimiento individualizado y cercano en territorio."
     ]
   },
   {
     id: "Reto C",
-    challengeNumber: 3,
+    challengeNumber: 1,
     region: "Caribe",
     image: reto3Img,
-    title: "Fondo de Padrinazgo y Co-Certificación",
-    hmw: "¿Cómo podríamos estructurar un programa tipo 'Padrinazgo y Co-Certificación' con profesionales Senior de empresas aliadas que sean mentores de jóvenes y docentes, para aumentar la construcción de redes de contacto e inserción laboral exitosa?",
-    painCategory: "Crítica G (Cat. 7): Escasez de capital relacional y redes de mentoría senior",
-    painDescription: "El talento junior de regiones tiene conocimientos teóricos pero fracasa en el onboarding corporativo por falta de 'palanca' (networking), desconocimiento del ritmo ágil y aislamiento de contactos.",
+    title: "Fricción de Red, Pasaporte de Habilidades y Selección Ciega",
+    hmw: "¿Cómo podríamos diseñar e implementar un ecosistema de “palancas” relacionales y visibilidad meritocrática que conecte las juventudes del Caribe con el mercado laboral TIC, eliminando sesgos de contratación (geográficos, étnicos y de títulos) mediante la articulación de redes de mentoría, un Pasaporte de Habilidades y sistemas de selección a ciegas basados en desempeño técnico u otros mecanismos innovadores que se están gestando en la región?",
+    painCategory: "Fricción de red y sesgos de contratación (geográficos, étnicos y de títulos)",
+    painDescription: "Ausencia de palancas relacionales y sesgos en los procesos de contratación laboral TIC que excluyen al talento joven del Caribe por origen o falta de credenciales tradicionales.",
     leverCategories: [
-      "D. Limitante por costos de credenciales Big Tech",
-      "B. Déficit pedagógico y docentes conectados"
+      "A. Pasaporte de Habilidades verificable",
+      "B. Selección a ciegas basada en desempeño técnico",
+      "C. Redes de mentoría y visibilidad meritocrática"
     ],
     potentialActors: [
-      "Red CIDESCO",
-      "Organización de Estados Iberoamericanos (OEI)",
-      "Multinacionales Tecnológicas",
-      "Cora (Plataforma de Talento)",
-      "Fundación ANDI"
+      "Cámaras de Comercio del Caribe (Barranquilla, Cartagena, Santa Marta)",
+      "ProBarranquilla",
+      "Universidades del Caribe (Uninorte, UTB)",
+      "Plataformas de Talento TIC y Gremios Regionales"
     ],
     advantages: [
-      "Construye el networking corporativo del joven de manera orgánica antes de su primera entrevista formal.",
-      "Disminuye casi a cero el riesgo de deserción o fracaso del joven durante sus primeros 90 días de empleo."
+      "Elimina sesgos de contratación mediante un Pasaporte de Habilidades y selección a ciegas basada en desempeño.",
+      "Construye redes de mentoría y palancas relacionales meritocráticas para los jóvenes del Caribe."
     ],
     disadvantages: [
-      "Dificultad para garantizar la constancia y disponibilidad de tiempo de los desarrolladores Senior corporativos.",
-      "Requiere un esfuerzo de coordinación logística, emparejamiento y seguimiento semanal intensivo."
+      "Requiere adopción y cambio cultural en las áreas de selección de talento humano de las empresas.",
+      "Estandarización necesaria para la validación del Pasaporte de Habilidades."
     ]
   },
   {
     id: "Reto D",
-    challengeNumber: 4,
+    challengeNumber: 2,
     region: "Caribe",
     image: reto4Img,
-    title: "Células de Código 100% Asincrónicas",
-    hmw: "¿Cómo podríamos diseñar modelos de evaluación y primer empleo 100% asincrónicos, basados en entregables y provistos de hardware, que eliminen las barreras de horario y conciliación con la economía del cuidado, para atraer y retener talento femenino en el sector TI?",
-    painCategory: "Crítica Q (Cat. 17): Vulnerabilidad socio-digital y brechas de las mujeres en TI",
-    painDescription: "Incumplimiento de metas corporativas ESG de paridad de género porque las jóvenes mujeres desertan de los procesos al chocar con cargas no remuneradas de cuidado en el hogar.",
+    title: "Acompañamiento Integral y Certificación Socioemocional",
+    hmw: "¿Cómo podríamos estructurar un modelo de acompañamiento integral y certificación de habilidades socioemocionales y digitales que fortalezca la autoconfianza y la resiliencia de los jóvenes del Caribe, reduciendo la autoexclusión y mejorando su desempeño en procesos de selección y entornos laborales?",
+    painCategory: "Autoexclusión laboral, falta de autoconfianza y resiliencia en jóvenes del Caribe",
+    painDescription: "Deserción y baja autoconfianza en jóvenes del Caribe al enfrentarse a procesos de selección laboral por falta de acompañamiento integral y certificación socioemocional.",
     leverCategories: [
-      "A. Flexibilidad operativa y entregables",
-      "C. Simulación de rendimiento",
-      "O. Hardware disponible en el hogar"
+      "A. Certificación de habilidades socioemocionales y digitales",
+      "B. Fortalecimiento de autoconfianza y resiliencia",
+      "C. Acompañamiento continuo pre-empleo y laboral"
     ],
     potentialActors: [
-      "OIT / UNFPA",
-      "Secretarías de la Mujer (Cali, Valle, Nariño, Atlántico, Bolívar)",
-      "Empresas TIC con compromisos ESG",
-      "Bizlab",
-      "Ministerio del Trabajo"
+      "OIT / Unión Europea - IDTF Facility",
+      "Secretarías de Desarrollo Económico del Caribe",
+      "Gremio TIC del Caribe",
+      "SENA Regional Caribe"
     ],
     advantages: [
-      "Materializa las métricas ESG corporativas atrayendo talento femenino altamente fidelizado.",
-      "Evita la precarización al pagar por valor del entregable validado y no por marcación de horas síncronas."
+      "Desarrolla autoconfianza, resiliencia y certifica habilidades socioemocionales clave.",
+      "Reduce significativamente la autoexclusión y mejora la permanencia en entornos laborales."
     ],
     disadvantages: [
-      "Trabajar 100% asíncronamente requiere un nivel de disciplina y madurez técnica muy alto en el talento Junior.",
-      "Mayor dificultad para evaluar y desarrollar habilidades blandas interpersonales sin interacción en vivo."
+      "Demanda un modelo continuo de seguimiento y coaching socioemocional calificado.",
+      "Requiere metodologías de evaluación cualitativas bien estandarizadas."
     ]
   }
 ];

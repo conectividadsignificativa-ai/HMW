@@ -34,7 +34,29 @@ export interface CollaborationCategoryInfo {
   description: string;
 }
 
-export type ChallengeSynergiesRecord = Record<CollaborationCategoryId, string>;
+export type LastMileServiceOption = 
+  | "Formación y capacitación"
+  | "Certificación y validación de habilidades"
+  | "Intermediación laboral y conexión con vacantes"
+  | "Mentoría y acompañamiento"
+  | "Emprendimiento e innovación"
+  | "Bilingüismo"
+  | "Investigación, analítica y generación de conocimiento"
+  | "Infraestructura, plataformas y tecnología"
+  | "Networking y articulación empresarial"
+  | "Otro";
+
+export interface ChallengeSynergiesRecord {
+  selectedServices: string[];
+  otherServiceText: string;
+  capacityDetail: string;
+  financieros?: string;
+  acompanamiento?: string;
+  espacios?: string;
+  dotacion?: string;
+  vinculacion?: string;
+  comunicaciones?: string;
+}
 
 export type SynergyCategory = 
   | "Financiera (Co-financiamiento / Becas)"
